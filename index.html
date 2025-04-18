@@ -72,9 +72,52 @@
       padding: 2px 5px;
       border-radius: 3px;
       font-size: 0.9rem;
-      background-color: #2563EB;
+      background-color: darkblue;
       border: 1px solid white;
       color: white;
+    }
+    /* Background image styling */
+    body {
+      background-image: url('bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* Optional: keeps background fixed while scrolling */
+    }
+    /* Overlay to improve text readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+      z-index: -1;
+    }
+    /* Ensure content is readable with white text */
+    body {
+      color: #ffffff;
+    }
+    .bg-gray-100 {
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
+    }
+    /* Sidebar text */
+    #sidebar a {
+      color: #ffffff;
+    }
+    #sidebar a:hover{
+      color: black;
+    }
+    #sidebar h2 {
+      color: #ffffff;
+    }
+    /* Header text */
+    header h1 {
+      color: #ffffff;
+    }
+    footer p {
+      color: #ffffff;
     }
     /* Responsive adjustments */
     @media (max-width: 768px) {
@@ -129,30 +172,30 @@
     }
   </style>
 </head>
-<body class="bg-gray-100 font-sans text-gray-800">
+<body class="bg-gray-100 font-sans">
   <!-- Sidebar -->
-  <div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full md:translate-x-0 transition-transform z-20">
+  <div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-gray-800 shadow-lg transform -translate-x-full md:translate-x-0 transition-transform z-20">
     <div class="p-4 border-b">
-      <h2 class="text-xl font-bold text-blue-600">DBM Notes</h2>
+      <h2 class="text-xl font-bold">DBM Notes</h2>
     </div>
     <nav class="p-4">
       <ul class="space-y-2">
-        <li><a href="#what-is-ebusiness" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">What is E-Business?</a></li>
-        <li><a href="#what-is-ecommerce" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">What is E-Commerce?</a></li>
-        <li><a href="#ecommerce-threats" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">E-Commerce Threats</a></li>
-        <li><a href="#encryption" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">Encryption</a></li>
-        <li><a href="#cryptography" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">Public/Private Key</a></li>
-        <li><a href="#digital-signatures" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">Digital Signatures</a></li>
-        <li><a href="#digital-certificates" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">Digital Certificates</a></li>
-        <li><a href="#strategic-management" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">Strategic Management</a></li>
-        <li><a href="#ebusiness-strategy" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">E-Business Strategy</a></li>
-        <li><a href="#internal-factors" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">Internal Factors</a></li>
-        <li><a href="#external-factors" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">External Factors</a></li>
-        <li><a href="#e-transition" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">E-Transition</a></li>
-        <li><a href="#bookstore-plan" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">Bookstore Plan</a></li>
-        <li><a href="#firewall-security" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">Firewall as Security Control</a></li>
-        <li><a href="#skills-ebusiness" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">Skills Required to Manage E-Business</a></li>
-        <li><a href="#erp-ebusiness" class="block text-blue-600 hover:bg-blue-50 p-2 rounded">How ERP Acts as an E-Business Backbone</a></li>
+        <li><a href="#what-is-ebusiness" class="block hover:bg-blue-50 p-2 rounded">What is E-Business?</a></li>
+        <li><a href="#what-is-ecommerce" class="block hover:bg-blue-50 p-2 rounded">What is E-Commerce?</a></li>
+        <li><a href="#ecommerce-threats" class="block hover:bg-blue-50 p-2 rounded">E-Commerce Threats</a></li>
+        <li><a href="#encryption" class="block hover:bg-blue-50 p-2 rounded">Encryption</a></li>
+        <li><a href="#cryptography" class="block hover:bg-blue-50 p-2 rounded">Public/Private Key</a></li>
+        <li><a href="#digital-signatures" class="block hover:bg-blue-50 p-2 rounded">Digital Signatures</a></li>
+        <li><a href="#digital-certificates" class="block hover:bg-blue-50 p-2 rounded">Digital Certificates</a></li>
+        <li><a href="#strategic-management" class="block hover:bg-blue-50 p-2 rounded">Strategic Management</a></li>
+        <li><a href="#ebusiness-strategy" class="block hover:bg-blue-50 p-2 rounded">E-Business Strategy</a></li>
+        <li><a href="#internal-factors" class="block hover:bg-blue-50 p-2 rounded">Internal Factors</a></li>
+        <li><a href="#external-factors" class="block hover:bg-blue-50 p-2 rounded">External Factors</a></li>
+        <li><a href="#e-transition" class="block hover:bg-blue-50 p-2 rounded">E-Transition</a></li>
+        <li><a href="#bookstore-plan" class="block hover:bg-blue-50 p-2 rounded">Bookstore Plan</a></li>
+        <li><a href="#firewall-security" class="block hover:bg-blue-50 p-2 rounded">Firewall as Security Control</a></li>
+        <li><a href="#skills-ebusiness" class="block hover:bg-blue-50 p-2 rounded">Skills Required to Manage E-Business</a></li>
+        <li><a href="#erp-ebusiness" class="block hover:bg-blue-50 p-2 rounded">How ERP Acts as an E-Business Backbone</a></li>
       </ul>
     </nav>
   </div>
@@ -160,10 +203,10 @@
   <!-- Main Content -->
   <div class="md:ml-64">
     <!-- Header -->
-    <header class="bg-blue-600 text-white p-4 flex justify-between items-center sticky top-0 z-10 shadow md:flex-row flex-col">
+    <header class="bg-blue-600 p-4 flex justify-between items-center sticky top-0 z-10 shadow md:flex-row flex-col">
       <h1 class="text-2xl font-bold">DBM Notes</h1>
       <div class="flex items-center space-x-4 w-full md:w-auto">
-        <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+        <button id="menu-toggle" class="md:hidden focus:outline-none">
           <i class="fas fa-bars text-2xl"></i>
         </button>
         <div class="audio-player w-full">
@@ -181,18 +224,18 @@
     <!-- Content -->
     <main class="max-w-4xl mx-auto p-6">
       <section id="what-is-ebusiness" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">What is E-Business?</h2>
-        <p class="text-gray-700">E-business means doing business activities using the internet, like buying/selling, providing services, and communicating online. It includes everything from internal operations to customer interactions and is broader than just online sales.</p>
+        <h2 class="text-2xl font-semibold mb-4">What is E-Business?</h2>
+        <p>E-business means doing business activities using the internet, like buying/selling, providing services, and communicating online. It includes everything from internal operations to customer interactions and is broader than just online sales.</p>
       </section>
 
       <section id="what-is-ecommerce" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">What is E-Commerce?</h2>
-        <p class="text-gray-700">E-commerce refers to the buying and selling of goods/services over the internet, such as shopping on Amazon or ordering food online. It is a part of e-business and mainly focuses on transactions between buyers and sellers.</p>
+        <h2 class="text-2xl font-semibold mb-4">What is E-Commerce?</h2>
+        <p>E-commerce refers to the buying and selling of goods/services over the internet, such as shopping on Amazon or ordering food online. It is a part of e-business and mainly focuses on transactions between buyers and sellers.</p>
       </section>
 
       <section id="ecommerce-threats" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">E-Commerce Threats</h2>
-        <ul class="list-disc pl-6 text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">E-Commerce Threats</h2>
+        <ul class="list-disc pl-6">
           <li>Phishing – Fake emails/websites tricking users to reveal sensitive information</li>
           <li>Malware – Harmful software that steals or destroys data</li>
           <li>Identity Theft – Hackers stealing personal or financial data</li>
@@ -207,28 +250,28 @@
       </section>
 
       <section id="encryption" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">Encryption</h2>
-        <p class="text-gray-700">Encryption locks your data so only the right person can unlock it. It scrambles readable data into a coded form that only authorized users can decode using special keys. It’s used in secure websites, messaging apps, and online transactions to protect sensitive information.</p>
+        <h2 class="text-2xl font-semibold mb-4">Encryption</h2>
+        <p>Encryption locks your data so only the right person can unlock it. It scrambles readable data into a coded form that only authorized users can decode using special keys. It’s used in secure websites, messaging apps, and online transactions to protect sensitive information.</p>
       </section>
 
       <section id="cryptography" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">Public and Private Key Cryptography</h2>
-        <p class="text-gray-700">It uses two keys: a public key (shared) and a private key (kept secret). One encrypts, the other decrypts. Commonly used in secure email communication, website security (HTTPS), and blockchain systems. It ensures confidentiality and authentication.</p>
+        <h2 class="text-2xl font-semibold mb-4">Public and Private Key Cryptography</h2>
+        <p>It uses two keys: a public key (shared) and a private key (kept secret). One encrypts, the other decrypts. Commonly used in secure email communication, website security (HTTPS), and blockchain systems. It ensures confidentiality and authentication.</p>
       </section>
 
       <section id="digital-signatures" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">Digital Signatures</h2>
-        <p class="text-gray-700">A digital signature proves a message is authentic and hasn’t been changed. It’s created with a private key and verified with a public key. It ensures message integrity, authentication, and non-repudiation in digital communications.</p>
+        <h2 class="text-2xl font-semibold mb-4">Digital Signatures</h2>
+        <p>A digital signature proves a message is authentic and hasn’t been changed. It’s created with a private key and verified with a public key. It ensures message integrity, authentication, and non-repudiation in digital communications.</p>
       </section>
 
       <section id="digital-certificates" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">Digital Certificates</h2>
-        <p class="text-gray-700">A digital certificate is like an online ID that proves a website is real and secure. Issued by a trusted Certificate Authority (CA), it confirms the ownership of the public key and builds trust between users and websites through SSL/TLS protocols.</p>
+        <h2 class="text-2xl font-semibold mb-4">Digital Certificates</h2>
+        <p>A digital certificate is like an online ID that proves a website is real and secure. Issued by a trusted Certificate Authority (CA), it confirms the ownership of the public key and builds trust between users and websites through SSL/TLS protocols.</p>
       </section>
 
       <section id="strategic-management" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">Strategic Management Process in E-Business</h2>
-        <ol class="list-decimal pl-6 text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">Strategic Management Process in E-Business</h2>
+        <ol class="list-decimal pl-6">
           <li>Goal Setting – Define the company’s long-term direction and specific objectives</li>
           <li>Environmental Analysis – Conduct SWOT and PESTEL to assess market and internal environment</li>
           <li>Strategy Formulation – Develop plans based on analysis to achieve competitive advantage</li>
@@ -238,8 +281,8 @@
       </section>
 
       <section id="ebusiness-strategy" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">Formulating an E-Business Strategy</h2>
-        <ul class="list-disc pl-6 text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">Formulating an E-Business Strategy</h2>
+        <ul class="list-disc pl-6">
           <li>Set goals – Define what success looks like for your business</li>
           <li>Understand customers – Know their needs, preferences, and behaviors</li>
           <li>Analyze competitors – Study strengths, weaknesses, and market position</li>
@@ -253,8 +296,8 @@
       </section>
 
       <section id="internal-factors" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">Internal Environmental Factors</h2>
-        <ul class="list-disc pl-6 text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">Internal Environmental Factors</h2>
+        <ul class="list-disc pl-6">
           <li>Company culture – Shared values, beliefs, and practices</li>
           <li>Employees and management – Skills, experience, and leadership quality</li>
           <li>Technology – Level of automation and digital tools used</li>
@@ -267,8 +310,8 @@
       </section>
 
       <section id="external-factors" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">External Environmental Factors</h2>
-        <ul class="list-disc pl-6 text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">External Environmental Factors</h2>
+        <ul class="list-disc pl-6">
           <li>Political – Government policies, taxation, trade regulations</li>
           <li>Economic – Currency rates, unemployment, market trends</li>
           <li>Social – Lifestyle changes, education, cultural attitudes</li>
@@ -279,8 +322,8 @@
       </section>
 
       <section id="e-transition" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">E-Transition (Digital Transformation)</h2>
-        <ol class="list-decimal pl-6 text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">E-Transition (Digital Transformation)</h2>
+        <ol class="list-decimal pl-6">
           <li>Identify the need – Spot opportunities or issues requiring digital upgrades</li>
           <li>Set goals – Define what the business wants to achieve digitally</li>
           <li>Analyze current state – Review existing tech, skills, and processes</li>
@@ -292,8 +335,8 @@
       </section>
 
       <section id="bookstore-plan" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">E-Business Plan for Online Bookstore</h2>
-        <ul class="list-disc pl-6 text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">E-Business Plan for Online Bookstore</h2>
+        <ul class="list-disc pl-6">
           <li>Business: Sell books online (paper, eBooks, audiobooks). Focus on wide selection, affordability, and regional language availability.</li>
           <li>Vision: Make reading accessible and enjoyable for everyone, everywhere.</li>
           <li>Target: Students, casual readers, competitive exam aspirants, professionals, and children’s book buyers.</li>
@@ -305,11 +348,11 @@
       </section>
 
       <section id="firewall-security" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">Firewall as Security Control</h2>
-        <p class="text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">Firewall as Security Control</h2>
+        <p>
           A firewall is like a security guard for your network. It watches all the internet traffic coming in and going out of your system. It blocks harmful data and lets safe information through, just like a filter.
         </p>
-        <ul class="list-disc pl-6 text-gray-700 mt-2">
+        <ul class="list-disc pl-6 mt-2">
           <li><strong>Protects against hackers</strong> – Stops unauthorized people from accessing your private network.</li>
           <li><strong>Blocks malicious websites</strong> – Prevents users from visiting unsafe or fake websites.</li>
           <li><strong>Filters content</strong> – You can set rules for what data or programs are allowed.</li>
@@ -319,8 +362,8 @@
       </section>
       
       <section id="skills-ebusiness" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">Skills Required to Manage E-Business</h2>
-        <ul class="list-disc pl-6 text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">Skills Required to Manage E-Business</h2>
+        <ul class="list-disc pl-6">
           <li><strong>Technical Skills</strong> – Understanding websites, apps, security, and basic coding.</li>
           <li><strong>Marketing Skills</strong> – Knowing how to advertise online using SEO, social media, and email campaigns.</li>
           <li><strong>Customer Service</strong> – Managing feedback, complaints, and helping users online.</li>
@@ -332,11 +375,11 @@
       </section>
       
       <section id="erp-ebusiness" class="mb-12 fade-in">
-        <h2 class="text-2xl font-semibold text-blue-600 mb-4">How ERP Acts as an E-Business Backbone</h2>
-        <p class="text-gray-700">
+        <h2 class="text-2xl font-semibold mb-4">How ERP Acts as an E-Business Backbone</h2>
+        <p>
           ERP (Enterprise Resource Planning) is software that connects all the departments of a business – like sales, inventory, HR, and finance – into one system. It helps everything work together smoothly and efficiently.
         </p>
-        <ul class="list-disc pl-6 text-gray-700 mt-2">
+        <ul class="list-disc pl-6 mt-2">
           <li><strong>Centralized System</strong> – Everyone uses the same data, so there's no confusion or duplication.</li>
           <li><strong>Real-Time Info</strong> – Managers can make fast decisions using live data from all parts of the business.</li>
           <li><strong>Better Efficiency</strong> – Automates tasks like invoicing, stock updates, and payroll, saving time and effort.</li>
@@ -348,7 +391,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-blue-600 text-white p-4 text-center">
+    <footer class="bg-blue-600 p-4 text-center">
       <p class="text-sm">© 2025 DBM Notes. All rights reserved.</p>
     </footer>
   </div>
