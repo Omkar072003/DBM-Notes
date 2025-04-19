@@ -82,7 +82,7 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed; /* Optional: keeps background fixed while scrolling */
+      background-attachment: fixed;
     }
     /* Overlay to improve text readability */
     body::before {
@@ -92,7 +92,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+      background-color: rgba(0, 0, 0, 0.3);
       z-index: -1;
     }
     /* Ensure content is readable with white text */
@@ -100,13 +100,13 @@
       color: #ffffff;
     }
     .bg-gray-100 {
-      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
+      background-color: rgba(255, 255, 255, 0.8);
     }
     /* Sidebar text */
     #sidebar a {
       color: #ffffff;
     }
-    #sidebar a:hover{
+    #sidebar a:hover {
       color: black;
     }
     #sidebar h2 {
@@ -119,10 +119,16 @@
     footer p {
       color: #ffffff;
     }
+    /* Logo styling */
+    .logo {
+      height: 40px;
+      width: auto;
+      margin-right: 1rem;
+    }
     /* Responsive adjustments */
     @media (max-width: 768px) {
       #sidebar {
-        width: 80%; /* Full width on mobile when open */
+        width: 80%;
       }
       .audio-player {
         flex-direction: column;
@@ -140,6 +146,11 @@
         align-items: flex-start;
         gap: 1rem;
       }
+      .header-left {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
       h1 {
         font-size: 1.5rem;
       }
@@ -155,6 +166,9 @@
         bottom: 5px;
         right: 5px;
       }
+      .logo {
+        height: 32px;
+      }
     }
     @media (max-width: 480px) {
       h2 {
@@ -168,6 +182,9 @@
       }
       select {
         font-size: 0.8rem;
+      }
+      .logo {
+        height: 28px;
       }
     }
   </style>
@@ -204,13 +221,16 @@
   <div class="md:ml-64">
     <!-- Header -->
     <header class="bg-blue-600 p-4 flex justify-between items-center sticky top-0 z-10 shadow md:flex-row flex-col">
-      <h1 class="text-2xl font-bold">DBM Notes</h1>
+      <div class="header-left flex items-center">
+        <img src="logo.png" alt="DBM Notes Logo" class="logo">
+        <h1 class="text-2xl font-bold">DBM Notes</h1>
+      </div>
       <div class="flex items-center space-x-4 w-full md:w-auto">
         <button id="menu-toggle" class="md:hidden focus:outline-none">
           <i class="fas fa-bars text-2xl"></i>
         </button>
-        <div class="audio-player w-full">
-          <audio id="audioPlayer" volume="0.1"></audio> <!-- Removed controls attribute -->
+        <div class="audio-player w-full md:w-auto">
+          <audio id="audioPlayer" volume="0.1"></audio>
           <select id="backgroundSound" class="mr-2">
             <option value="none">No Background</option>
             <option value="rain">Rain</option>
@@ -360,7 +380,7 @@
           <li><strong>Types:</strong> Software firewalls (installed on computers) and hardware firewalls (dedicated devices between network and internet).</li>
         </ul>
       </section>
-      
+
       <section id="skills-ebusiness" class="mb-12 fade-in">
         <h2 class="text-2xl font-semibold mb-4">Skills Required to Manage E-Business</h2>
         <ul class="list-disc pl-6">
@@ -373,7 +393,7 @@
           <li><strong>Leadership and Communication</strong> – Leading teams, managing conflicts, and clear communication.</li>
         </ul>
       </section>
-      
+
       <section id="erp-ebusiness" class="mb-12 fade-in">
         <h2 class="text-2xl font-semibold mb-4">How ERP Acts as an E-Business Backbone</h2>
         <p>
@@ -387,7 +407,6 @@
           <li><strong>Supports Growth</strong> – As the business expands, ERP scales easily without needing major changes.</li>
         </ul>
       </section>
-      
     </main>
 
     <!-- Footer -->
@@ -436,7 +455,7 @@
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        const headerHeight = window.innerWidth < 768 ? 50 : 60; // Adjust based on screen size
+        const headerHeight = window.innerWidth < 768 ? 50 : 60;
         const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
         window.scrollTo({ top: targetPosition, behavior: 'smooth' });
       });
@@ -448,11 +467,11 @@
     const soundToggle = document.getElementById('soundToggle');
     let isSoundPlaying = false;
 
-    // Background sound options (updated with valid URLs)
+    // Background sound options
     const soundSources = {
       none: null,
-      rain: 'light-rain-109591.mp3', // Valid URL for testing
-      forest: 'forest-ambience-296528.mp3', // Valid URL for testing
+      rain: 'light-rain-109591.mp3',
+      forest: 'forest-ambience-296528.mp3',
     };
 
     // Function to update and play sound
